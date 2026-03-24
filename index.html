@@ -323,37 +323,41 @@
     }
     .van-inner {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 48px;
     }
     .van-img {
-      max-width: 420px;
+      width: 45%;
+      max-width: 480px;
+      flex-shrink: 0;
       border-radius: 6px;
+      object-fit: cover;
     }
-    .trust-stats {
+    .van-right {
+      flex: 1;
       display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+      flex-direction: column;
+      gap: 28px;
     }
     .services-intro-inline {
-      width: 100%;
-      text-align: center;
-      margin-bottom: 8px;
+      text-align: left;
     }
     .services-intro-inline h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
       margin: 6px 0 10px;
     }
     .services-intro-inline p {
-      max-width: 640px;
-      margin: 0 auto;
       color: var(--text-muted, #666);
       font-size: 1rem;
       line-height: 1.6;
+    }
+    .trust-stats {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
     }
     .stat-item {
       text-align: center;
@@ -653,8 +657,10 @@
       .emergency-cta-btns { flex-direction: column; align-items: center; }
       .sticky-phone-bar { display: flex; align-items: center; justify-content: center; }
       body { padding-bottom: 56px; }
-      .trust-stats { gap: 20px; }
-      .van-inner { flex-direction: column; }
+      .trust-stats { gap: 20px; justify-content: center; }
+      .van-inner { flex-direction: column; align-items: center; }
+      .van-img { width: 100%; max-width: 100%; }
+      .services-intro-inline { text-align: center; }
     }
     @media (max-width: 480px) {
       .hero { padding: 40px 0 50px; }
@@ -772,6 +778,7 @@
         alt="Goff Heating & Plumbing technician at work"
         class="van-img"
       >
+      <div class="van-right">
       <div class="trust-stats">
         <div class="services-intro-inline">
           <p class="section-label">Our Services</p>
@@ -795,6 +802,7 @@
           <div class="stat-label">Emergency Available</div>
         </div>
       </div>
+      </div><!-- /.van-right -->
     </div>
   </section>
 
