@@ -670,7 +670,48 @@
     @media (max-width: 480px) {
       .hero { padding: 40px 0 50px; }
     }
-  </style>
+  
+    /* ===== MOBILE FIXES ===== */
+    @media (max-width: 768px) {
+      /* 1. Header: stack logo + text, center */
+      .logo-wrap > div {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        gap: 6px !important;
+      }
+      .logo-wrap > div span {
+        text-align: center !important;
+      }
+
+      /* 2. Hero: stack columns, reorder so form sits between CTA button and desc/trust */
+      .hero-inner {
+        flex-direction: column !important;
+      }
+      .hero-left {
+        display: flex !important;
+        flex-direction: column !important;
+        order: 1 !important;
+      }
+      .hero-kicker { order: 1; }
+      .hero-left h1 { order: 2; }
+      /* CTA button stays at order 3 (natural) */
+      .hero-right {
+        order: 2 !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+      }
+      /* desc and trust move after the form */
+      .hero-desc {
+        order: 10 !important;
+        margin-top: 16px !important;
+      }
+      .hero-trust {
+        order: 11 !important;
+      }
+    }
+
+    </style>
 </head>
 <body>
 
