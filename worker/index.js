@@ -242,22 +242,18 @@ export default {
     const subject = `New Plumbing Lead: ${fullName}${data.phone ? ' - ' + data.phone : ''}`;
 
     try {
+      // Email notification disabled — GHL webhook only
+      // To re-enable: uncomment the Gmail send block below
+      /*
       const accessToken = await getGmailAccessToken(
         env.GOOGLE_CLIENT_EMAIL,
         env.GOOGLE_PRIVATE_KEY,
         env.FROM_EMAIL
       );
+      await sendGmail(accessToken, from, to, subject, buildEmailHtml(data), data.email);
+      */
 
-      await sendGmail(
-        accessToken,
-        from,
-        to,
-        subject,
-        buildEmailHtml(data),
-        data.email
-      );
-
-      // Also POST to GHL webhook
+      // POST to GHL webhook
       try {
         await fetch(GHL_WEBHOOK, {
           method: 'POST',
