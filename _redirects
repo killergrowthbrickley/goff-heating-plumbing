@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects
+# /plumbing route - serve the plumbing landing page
+/plumbing    /plumbing/index.html    200
